@@ -1,0 +1,10 @@
+###
+post http://localhost:4000/users/signup 
+Content-Type: application/json 
+
+{
+    "email": "user@example.com",
+    "Phone": "08036084874",
+    "password": "72905Dac#",
+    "confirm_password": "72905Dac#"
+}

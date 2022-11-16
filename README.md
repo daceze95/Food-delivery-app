@@ -1,5 +1,8 @@
-#Setup - DONE
+## Setup - ✅
 
-#MVC - DONE
+## MVC - ✅
 
-#DB configuration
+## DB configuration - ✅
+## mvc model - ✅
+
+## Helper functions joi validation , password hashing, salt etc.

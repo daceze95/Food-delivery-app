@@ -1,5 +1,11 @@
-#Setup - DONE
+## Setup - DONE
 
-#MVC - DONE
+## MVC - DONE
 
-#DB configuration
+# DB configuration
+
+# MVC model-done
+
+# Helper function Joi Vaidation, password encrption,salt e.t.c
+
+# implement sms otp notification with twilio and email notification with nodemailer

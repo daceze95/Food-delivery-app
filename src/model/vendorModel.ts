@@ -1,28 +1,32 @@
 import { DataTypes, Model } from 'sequelize'
 import {v4 as uuidv4 } from 'uuid';
 import {db} from '../config'
+import { foodInstance } from './foodModel';
 
-export interface UserAttributes{
+export interface VendorAttributes{
     id: string;
+    name: string;
+    ownerName: string;
+    pincode: string;
+    phone: string;
+    address:string;
     email:string;
     password:string;
-    firstName: string;
-    lastName: string;
     salt:string;
-    address:string;
-    phone: string;
-    otp: number;
-    otp_expiry: Date;
-    lng:number;
-    lat: number;
-    verified:boolean;
+    serviceAvailablity:boolean;
+    rating:number
     role:string;
+    // otp: number;
+    // otp_expiry: Date;
+    // lng:number;
+    // lat: number;
+    // verified:boolean;
 
 }
 
-export class UserIstance extends Model<UserAttributes>{}
+export class VendorInstance extends Model<VendorAttributes>{}
 
-UserIstance.init({
+VendorInstance.init({
     id: {
         type:DataTypes.UUIDV4,
         primaryKey: true,
@@ -53,11 +57,11 @@ UserIstance.init({
             },
         }
     },
-    firstName: {
+    name: {
         type:DataTypes.STRING,
         allowNull: true,
     },
-    lastName: {
+    ownerName: {
         type:DataTypes.STRING,
         allowNull: true,
     },
@@ -82,40 +86,16 @@ UserIstance.init({
             },
         }
     },
-    otp: {
-        type:DataTypes.NUMBER,
-        allowNull: false,
-        validate: {
-            notNull: {
-                msg: "Otp is required"
-            },
-            notEmpty: {
-                msg: "provide an Otp",
-            },
-        }
-    },
-    otp_expiry: {
-        type:DataTypes.DATE,
-        allowNull:false,
-        validate: {
-            notNull: {
-                msg: "Otp expired",
-            },
-            notEmpty: {
-                msg: "provide an Otp",
-            },
-        }
-    },
-    lat: {
+    pincode: {
         type:DataTypes.NUMBER,
         allowNull:true,
     },
-    lng: {
-        type:DataTypes.NUMBER,
-        allowNull:true,
-    },
-    verified: {
+    serviceAvailablity: {
         type:DataTypes.BOOLEAN,
+        allowNull:true,
+    },
+    rating: {
+        type:DataTypes.NUMBER,
         allowNull: false,
         validate: {
             notNull: {
@@ -133,6 +113,9 @@ UserIstance.init({
 },
     {
         sequelize:db,
-        tableName: 'user'
+        tableName: 'vendor'
     }
 );
+
+VendorInstance.hasMany(foodInstance, {foreignKey:"vendorId", as:"food"}) ;
+foodInstance.belongsTo(VendorInstance, {foreignKey:"vendorId", as:"vendor"})

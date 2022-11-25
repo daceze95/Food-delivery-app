@@ -36,7 +36,6 @@ export const vendorSchema = Joi.object().keys({
   phone: Joi.string().required(),
   password: Joi.string().pattern(new RegExp("^[a-zA-Z0-9]{3,30}$")),
   
-
 });
 
 export const loginSchema = Joi.object().keys({
@@ -80,7 +79,6 @@ export const updateSchema = Joi.object().keys({
   firstName: Joi.string().required(),
   lastName: Joi.string().required(),
   address: Joi.string().required()
-  
 });
 
 export const foodSchema = Joi.object().keys({
@@ -90,5 +88,4 @@ export const foodSchema = Joi.object().keys({
     price: Joi.string().required(),
     readyTime: Joi.string().required(),
     foodType: Joi.string().required(),
-  
   });

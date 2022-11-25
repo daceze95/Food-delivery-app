@@ -1,5 +1,4 @@
 import { DataTypes, Model } from 'sequelize'
-import {v4 as uuidv4 } from 'uuid';
 import {db} from '../config'
 import { foodInstance } from './foodModel';
 
@@ -16,11 +15,6 @@ export interface VendorAttributes{
     serviceAvailablity:boolean;
     rating:number
     role:string;
-    // otp: number;
-    // otp_expiry: Date;
-    // lng:number;
-    // lat: number;
-    // verified:boolean;
 
 }
 

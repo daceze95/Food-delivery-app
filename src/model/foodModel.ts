@@ -51,7 +51,7 @@ foodInstance.init({
         allowNull:true,
     },
     description: {
-        type:DataTypes.NUMBER,
+        type:DataTypes.STRING,
         allowNull:true,
     },
     rating: {

@@ -3,3 +3,5 @@ node_modules
 dist
 roughwork.js
 yarn.lock
+food.sqlite
+.DS_Store

@@ -22,6 +22,6 @@ const port = process.env.PORT || 4000;
 app.use('/', index_1.default);
 app.use('/users', users_1.default);
 app.use('/admins', admin_1.default);
-app.use('/vendor', vendor_1.default);
+app.use('/vendors', vendor_1.default);
 app.listen(port, () => console.log(`server running on http://localhost:${port}`));
 exports.default = app;

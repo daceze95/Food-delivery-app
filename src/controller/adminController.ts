@@ -197,7 +197,7 @@ export const createAdmin = async(req: JwtPayload, res: Response, next: NextFunct
 export const createVendor = async(req: JwtPayload, res: Response, next: NextFunction) => {
     try {
         const {id} = req.user
-
+console.log(req)
        const {
         name,
         ownerName,

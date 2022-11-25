@@ -24,7 +24,7 @@ const port = process.env.PORT || 4000;
 app.use('/', indexRouter);
 app.use('/users', userRouter);
 app.use('/admins', adminRouter);
-app.use('/vendor', vendorRouter);
+app.use('/vendors', vendorRouter);
 
 app.listen(port, () =>
   console.log(`server running on http://localhost:${port}`)

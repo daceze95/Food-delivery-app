@@ -6,9 +6,7 @@ import { VendorAttributes, VendorInstance } from '../model/vendorModel';
 
 export const auth = async (req:JwtPayload, res:Response, next:NextFunction) => {
     try {
-        const authorization = req.headers.authorization as string
-        // const Bearer = authorization.split(" ")
-        // const token = Bearer[1]
+        const authorization = req.headers.authorization as string;
 
         if(!authorization){
             return res.status(401).json({
